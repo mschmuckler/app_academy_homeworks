@@ -64,8 +64,8 @@ class Board
   end
 
   def one_side_empty?
-    return true if (0..5).to_a.all? { |i| @cups[0].empty? }
-    return true if (7..12).to_a.all? { |i| @cups[0].empty? }
+    return true if (0..5).to_a.all? { |i| @cups[i].empty? }
+    return true if (7..12).to_a.all? { |i| @cups[i].empty? }
     false
   end
 
