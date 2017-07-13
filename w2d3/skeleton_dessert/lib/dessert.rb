@@ -1,4 +1,4 @@
-# require 'active_support/inflector'
+require 'active_support/inflector'
 
 class Dessert
   attr_reader :type, :quantity, :ingredients, :temp
