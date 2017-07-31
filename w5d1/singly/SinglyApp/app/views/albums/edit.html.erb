@@ -1,0 +1,33 @@
+<h1>Editing: <%= @album.title %></h1>
+
+<form action="<%= album_url(@album) %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <label for="album-title">Album Title</label>
+  <input id="album-title" type="text" name="album[title]" value="<%= @album.title %>">
+
+  <br>
+
+  <label for="album-band">Band</label>
+  <select id="album-band" name="album[band_id]">
+    <option selected disabled>--Please Select--</option>
+    <% Band.all.each do |band| %>
+      <option value="<%= band.id %>"
+      <%=  "selected" if @album.band_id == band.id %> ><%= band.name %></option>
+    <% end %>
+  </select>
+
+  <br>
+
+  <% Album::RECORDING_STYLES.each do |style| %>
+    <label for="recording-style"><%= style %></label>
+    <input class="recording-style" type="radio" name="album[recording_style]" value="<%= style %>"
+      <%= "checked" if @album.recording_style == style %> >
+    <br>
+  <% end %>
+
+  <br>
+
+  <input type="submit" name="" value="Edit album">
+</form>

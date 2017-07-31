@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'Kalam';
+  text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F, 0 0 0.2em #87F;
+  color: #180042;
+  background: linear-gradient(to bottom right, #99FD91, #4E25F3);
+}
+
+header {
+  background-color: #9751F2;
+  padding-left: 7px;
+  width: 20%;
+}
+
+header a {
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
+  padding-top: 15px;
+}
+
+.errors {
+  color: red;
+  text-shadow: none;
+}
+
+#signin {
+  color: whitesmoke;
+  text-shadow: 0 0 0.2em purple, 0 0 0.2em purple, 0 0 0.2em purple;
+}
+
+h1 {
+  color: #6B1062;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+input[type="submit"] {
+  background-color: #6C01F9;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  background-color: #D315E8;
+  color: black;
+  padding: 10px;
+}

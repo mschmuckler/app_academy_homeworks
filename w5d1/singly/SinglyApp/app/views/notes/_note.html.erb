@@ -1,0 +1,31 @@
+<h2>Notes:</h2>
+
+<ul class="note-list">
+  <% notes.each do |note| %>
+    <li>
+      <%= User.find(note.user_id).email %>: <%= note.body %>
+
+      <% if current_user.id == note.user_id %>
+        <form action="  <%= note_url(note) %> " method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete note">
+        </form>
+      <% end %>
+
+    </li>
+    <br>
+  <% end %>
+</ul>
+
+<form action="<%= notes_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="hidden" name="note[track_id]" value="<%= track.id %>">
+
+  <textarea name="note[body]">Enter note here...</textarea>
+
+  <br>
+
+  <input type="submit" value="Submit note">
+</form>

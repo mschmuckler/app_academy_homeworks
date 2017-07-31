@@ -1,0 +1,13 @@
+<h1><%= @track.title %></h1>
+<h2>on: <%= Album.find(@track.album_id).title %></h2>
+<a href="<%= edit_track_url(@track) %>">Edit track</a>
+<form action="<%= track_url(@track) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete track">
+</form>
+
+<p>Feature style: <%= @track.feature %></p>
+<p>Lyrics: <%= ugly_lyrics(@track.lyrics) %></p>
+
+<%= render 'notes/note', track: @track, notes: @track.notes %>
